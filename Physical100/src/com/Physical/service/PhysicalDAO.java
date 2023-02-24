@@ -53,6 +53,36 @@ public class PhysicalDAO extends DAO {
 		return list;
 	}
 
+	
+	public List<Phy100> test(String grade) {
+		List<Phy100> list = new ArrayList<>();
+		Phy100 phy100 = null;
+		try {
+			conn();
+			String sql = "select * from Phy100 where phy100_grade = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, grade);
+
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				phy100 = new Phy100();
+				phy100.setPhy100Id(rs.getString("phy100_id"));
+				phy100.setPhy100Name(rs.getString("phy100_name"));
+				phy100.setPhy100Impo(rs.getString("phy100_impo"));
+				phy100.setPhy100Height(rs.getInt("phy100_height"));
+				phy100.setPhy100Weight(rs.getInt("phy100_weight"));
+				phy100.setPhy100Power(rs.getInt("phy100_power"));
+				phy100.setPhy100Grade(rs.getString("phy100_grade"));
+
+				list.add(phy100);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconn();
+		}
+		return list;
+	}
 	// 참가자 이름 조회
 	public Phy100 getPhy100(String Phy100Name) {
 		Phy100 Phy100 = null;
@@ -93,7 +123,7 @@ public class PhysicalDAO extends DAO {
 //	PHY100_GRADE           VARCHAR2(1)
 
 	// 등록
-	public int insertStd(Phy100 phy100) {
+	public int insertPhy100(Phy100 phy100) {
 		int result = 0;
 		try {
 			conn();

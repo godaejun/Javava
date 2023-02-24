@@ -49,9 +49,9 @@ public class ExeApp {
 
 	private void loginMenu() {
 		// 내정보조회, 탈퇴, 수정
-		System.out.println("==========================");
+		System.out.println("==================================================");
 		System.out.println("== 1.조회 2.수정 3. 탈퇴 ==");
-		System.out.println("==========================");
+		System.out.println("==================================================");
 		System.out.println("입력>");
 		menu = sc.nextLine();
 
