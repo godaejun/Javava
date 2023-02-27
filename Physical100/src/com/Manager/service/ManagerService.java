@@ -10,7 +10,7 @@ public class ManagerService {
 
 	//0.회원가입
 			public void signup() {
-				System.out.println("==회원가입==");
+				System.out.println("==== 회원가입 ====");
 				Manager signup = new Manager();
 				System.out.println("ID를 입력하세요");
 				signup.setManagerId(sc.nextLine());
@@ -19,7 +19,7 @@ public class ManagerService {
 				System.out.println("이름을 입력하세요");
 				signup.setManagerName(sc.nextLine());
 				System.out.println("전화번호를 입력하세요 ex)010-0000-0000");
-				signup.setManagerTell(Integer.parseInt(sc.nextLine()));
+				signup.setManagerTel(sc.nextLine());
 				
 				int result = ManagerDAO.getInstance().signup(signup);
 				
@@ -30,25 +30,24 @@ public class ManagerService {
 				}
 				}
 
-		
-		
-	
-	
 	
 	// 1.로그인
 	public void login() {
 		Manager manager = null;
-		System.out.println("ID>");
+		System.out.println("ID :");
 		String manId = sc.nextLine();
-		System.out.println("PW>");
+		System.out.println("PW :");
 		String manPw = sc.nextLine();
 
 		manager = ManagerDAO.getInstance().login(manId);
 
 		if (manager != null) {
 			if (manager.getManagerPw().equals(manPw)) {
-				System.out.println("로그인 성공");
-				System.out.println(manager.getManagerName() + "님 환영합니다.");
+				System.out.println("============================================================================================");
+				System.out.println("\n\n\n");
+				System.out.println("\t \t \t \t ☜ (●'◡'●) 로그인 성공 (●'◡'●) ☞");
+				System.out.println("\n\n\n");
+				System.out.println( " 🙈🙉 " + manager.getManagerName() + "님 환영합니다 🙉🙈 ");
 				managerInfo = manager;
 			} else {
 				System.out.println("비밀번호가 다릅니다.");
@@ -58,12 +57,12 @@ public class ManagerService {
 		}
 	}
 
-	// 수정
+	// 2.수정
 	public void modifyManager() {
 		Manager manager = new Manager();
 		System.out.println("바꿀 전화번호>");
-		int man = (Integer.parseInt(sc.nextLine()));
-		manager.setManagerTell(man);
+		String man = sc.nextLine();
+		manager.setManagerTel(man);
 		System.out.println("누구의? >");
 		String name = sc.nextLine();
 		manager.setManagerName(name);
@@ -73,7 +72,7 @@ public class ManagerService {
 		System.out.println(manager.toString());
 	}
 
-	// 삭제?
+	// 3.삭제
 	public void deleteManager() {
 		System.out.println("이름 입력>");
 		int result = ManagerDAO.getInstance().deleteManager(sc.nextLine());
@@ -82,6 +81,7 @@ public class ManagerService {
 
 	}
 
+	// 관리자 아이디 조회
 	public void getManager() {
 		Manager manager = ManagerDAO.getInstance().getManager();
 		System.out.println(manager.toString());

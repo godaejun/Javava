@@ -19,12 +19,12 @@ public class ManagerDAO extends DAO {
 				int result = 0;
 				try {
 					conn();
-					String sql = "INSERT INTO manager VALUES(?,?,?,?,?,?)";
+					String sql = "INSERT INTO manager VALUES(?,?,?,?)";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1,manager.getManagerId());
 					pstmt.setString(2,manager.getManagerPw());
 					pstmt.setString(3,manager.getManagerName());
-					pstmt.setInt(4,manager.getManagerTell());
+					pstmt.setString(4,manager.getManagerTel());
 					
 					result = pstmt.executeUpdate();
 					
@@ -54,7 +54,7 @@ public class ManagerDAO extends DAO {
 				man.setManagerId(rs.getString("manager_id"));
 				man.setManagerPw(rs.getString("manager_pw"));
 				man.setManagerName(rs.getString("manager_name"));
-				man.setManagerTell(rs.getInt("manager_tell"));
+				man.setManagerTel(rs.getString("manager_tel"));
 
 			}
 		} catch (Exception e) {
@@ -81,7 +81,7 @@ public class ManagerDAO extends DAO {
 				manager.setManagerId(rs.getString("manager_id"));
 				manager.setManagerPw(rs.getString("manager_pw"));
 				manager.setManagerName(rs.getString("manager_name"));
-				manager.setManagerTell(rs.getInt("manager_tell"));
+				manager.setManagerTel(rs.getString("manager_tel"));
 
 			}
 		} catch (Exception e) {

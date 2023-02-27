@@ -37,7 +37,7 @@ public class PhysicalDAO extends DAO {
 				phy100 = new Phy100();
 				phy100.setPhy100Id(rs.getString("phy100_id"));
 				phy100.setPhy100Name(rs.getString("phy100_name"));
-				phy100.setPhy100Impo(rs.getString("phy100_impo"));
+				phy100.setPhy100Info(rs.getString("phy100_info"));
 				phy100.setPhy100Height(rs.getInt("phy100_height"));
 				phy100.setPhy100Weight(rs.getInt("phy100_weight"));
 				phy100.setPhy100Power(rs.getInt("phy100_power"));
@@ -62,7 +62,7 @@ public class PhysicalDAO extends DAO {
 		Phy100 phy100 = null;
 		try {
 			conn();
-			String sql = "SELECT Phy100_NAME , Phy100_IMPO , Phy100_POWER , phy100_Group ,\r\n"
+			String sql = "SELECT Phy100_NAME , Phy100_INFO , Phy100_POWER , phy100_Group ,\r\n"
 					+ "ROW_NUMBER() OVER (ORDER BY Phy100_Power  desc ) AS rank \r\n"
 					+ "FROM Phy100";
 			pstmt = conn.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class PhysicalDAO extends DAO {
 				phy100 = new Phy100();
 				//phy100.setPhy100Id(rs.getString("phy100_id"));
 				phy100.setPhy100Name(rs.getString("phy100_name"));
-				phy100.setPhy100Impo(rs.getString("phy100_impo"));
+				phy100.setPhy100Info(rs.getString("phy100_info"));
 				//phy100.setPhy100Height(rs.getInt("phy100_height"));
 				//phy100.setPhy100Weight(rs.getInt("phy100_weight"));
 				phy100.setPhy100Power(rs.getInt("phy100_power"));
@@ -109,7 +109,7 @@ public class PhysicalDAO extends DAO {
 					Phy100 = new Phy100();
 					Phy100.setPhy100Id(rs.getString("phy100_id"));
 					Phy100.setPhy100Name(rs.getString("phy100_name"));
-					Phy100.setPhy100Impo(rs.getString("phy100_impo"));
+					Phy100.setPhy100Info(rs.getString("phy100_info"));
 					Phy100.setPhy100Height(rs.getInt("phy100_height"));
 					Phy100.setPhy100Weight(rs.getInt("phy100_weight"));
 					Phy100.setPhy100Power(rs.getInt("phy100_power"));
@@ -142,7 +142,7 @@ public class PhysicalDAO extends DAO {
 					Phy100 = new Phy100();
 					Phy100.setPhy100Id(rs.getString("phy100_id"));
 					Phy100.setPhy100Name(rs.getString("phy100_name"));
-					Phy100.setPhy100Impo(rs.getString("phy100_impo"));
+					Phy100.setPhy100Info(rs.getString("phy100_info"));
 					Phy100.setPhy100Height(rs.getInt("phy100_height"));
 					Phy100.setPhy100Weight(rs.getInt("phy100_weight"));
 					Phy100.setPhy100Power(rs.getInt("phy100_power"));
@@ -197,7 +197,7 @@ public class PhysicalDAO extends DAO {
 				Phy100 = new Phy100();
 				Phy100.setPhy100Id(rs.getString("phy100_id"));
 				Phy100.setPhy100Name(rs.getString("phy100_name"));
-				Phy100.setPhy100Impo(rs.getString("phy100_impo"));
+				Phy100.setPhy100Info(rs.getString("phy100_info"));
 				Phy100.setPhy100Height(rs.getInt("phy100_height"));
 				Phy100.setPhy100Weight(rs.getInt("phy100_weight"));
 				Phy100.setPhy100Power(rs.getInt("phy100_power"));

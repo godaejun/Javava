@@ -4,7 +4,7 @@ public class Phy100 {
 
 //	PHY100_ID       NOT NULL VARCHAR2(20) 
 //	PHY100_NAME     NOT NULL VARCHAR2(15) 
-//	PHY100_IMPO              VARCHAR2(30) 
+//	PHY100_INFO              VARCHAR2(30) 
 //	PHY100_HEIGHT            NUMBER(15)   
 //	PHY100_WEIGHT            NUMBER(15)   
 //	PHY100_POWER             NUMBER(10)   
@@ -13,11 +13,10 @@ public class Phy100 {
 	
 	private String phy100Id;
 	private String phy100Name;
-	private String phy100Impo;
+	private String phy100Info;
 	private int phy100Height;
 	private int phy100Weight;
 	private int phy100Power;
-	
 	private String phy100Group;
 	private String phy100Survival;
 	
@@ -41,11 +40,11 @@ public class Phy100 {
 	public void setPhy100Name(String phy100Name) {
 		this.phy100Name = phy100Name;
 	}
-	public String getPhy100Impo() {
-		return phy100Impo;
+	public String getPhy100Info() {
+		return phy100Info;
 	}
-	public void setPhy100Impo(String phy100Impo) {
-		this.phy100Impo = phy100Impo;
+	public void setPhy100Info(String phy100Info) {
+		this.phy100Info = phy100Info;
 	}
 	public int getPhy100Height() {
 		return phy100Height;
@@ -80,7 +79,7 @@ public class Phy100 {
 	}
 	@Override
 	public String toString() {
-		return "Phy100 [phy100Id=" + phy100Id + ", phy100Name=" + phy100Name + ", phy100Impo=" + phy100Impo
+		return "Phy100 [phy100Id=" + phy100Id + ", phy100Name=" + phy100Name + ", phy100Info=" + phy100Info
 				+ ", phy100Height=" + phy100Height + ", phy100Weight=" + phy100Weight + ", phy100Power=" + phy100Power + ", phy100Group=" + phy100Group + ", phy100Survival=" + phy100Survival + "rank = "+ rank+"]";
 	
 }

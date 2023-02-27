@@ -10,7 +10,7 @@ public class Manager {
 	private String managerId;
 	private String managerPw;
 	private String managerName;
-	private int managerTell;
+	private String managerTel;
 	
 
 	
@@ -39,19 +39,19 @@ public class Manager {
 		this.managerName = managerName;
 	}
 
-	public int getManagerTell() {
-		return managerTell;
+	public String getManagerTel() {
+		return managerTel;
 	}
 
-	public void setManagerTell(int managerTell) {
-		this.managerTell = managerTell;
+	public void setManagerTel(String managerTel) {
+		this.managerTel = managerTel;
 	}
 
 
 	@Override
 	public String toString() {
 		return "Manager [managerId=" + managerId + ", managerPw=" + managerPw + ", managerName=" + managerName
-				+ ", managerTell=" + managerTell + "]";
+				+ ", managerTel=" + managerTel + "]";
 	}
 	
 	
