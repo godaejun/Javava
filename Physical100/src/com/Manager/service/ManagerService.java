@@ -8,6 +8,33 @@ public class ManagerService {
 
 	public static Manager managerInfo = null;
 
+	//0.회원가입
+			public void signup() {
+				System.out.println("==회원가입==");
+				Manager signup = new Manager();
+				System.out.println("ID를 입력하세요");
+				signup.setManagerId(sc.nextLine());
+				System.out.println("PW를 입력하세요");
+				signup.setManagerPw(sc.nextLine());
+				System.out.println("이름을 입력하세요");
+				signup.setManagerName(sc.nextLine());
+				System.out.println("전화번호를 입력하세요 ex)010-0000-0000");
+				signup.setManagerTell(Integer.parseInt(sc.nextLine()));
+				
+				int result = ManagerDAO.getInstance().signup(signup);
+				
+				if(result > 0) {
+					System.out.println("회원가입 완료");
+				}else {
+					System.out.println("회원가입 실패");
+				}
+				}
+
+		
+		
+	
+	
+	
 	// 1.로그인
 	public void login() {
 		Manager manager = null;

@@ -1,13 +1,15 @@
 package com.Physical.service;
 
 public class Phy100 {
-//	PHY100_ID     NOT NULL VARCHAR2(20) 
-//	PHY100_NAME   NOT NULL VARCHAR2(15) 
-//	PHY100_IMPO            VARCHAR2(30) 
-//	PHY100_HEIGHT          NUMBER(10)   
-//	PHY100_WEIGHT          NUMBER(10)   
-//	PHY100_POWER           NUMBER(10)   
-//	PHY100_GRADE           VARCHAR2(1)
+
+//	PHY100_ID       NOT NULL VARCHAR2(20) 
+//	PHY100_NAME     NOT NULL VARCHAR2(15) 
+//	PHY100_IMPO              VARCHAR2(30) 
+//	PHY100_HEIGHT            NUMBER(15)   
+//	PHY100_WEIGHT            NUMBER(15)   
+//	PHY100_POWER             NUMBER(10)   
+//	PHY100_GROUP             VARCHAR2(10) 
+//	PHY100_SURVIVAL          VARCHAR2(20) 
 	
 	private String phy100Id;
 	private String phy100Name;
@@ -15,8 +17,18 @@ public class Phy100 {
 	private int phy100Height;
 	private int phy100Weight;
 	private int phy100Power;
-	private String phy100Grade;
 	
+	private String phy100Group;
+	private String phy100Survival;
+	
+	private int rank;
+	
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
 	public String getPhy100Id() {
 		return phy100Id;
 	}
@@ -53,17 +65,23 @@ public class Phy100 {
 	public void setPhy100Power(int phy100Power) {
 		this.phy100Power = phy100Power;
 	}
-	public String getPhy100Grade() {
-		return phy100Grade;
-	}
-	public void setPhy100Grade(String phy100Grade) {
-		this.phy100Grade = phy100Grade;
-	}
 	
+	public String getPhy100Group() {
+		return phy100Group;
+	}
+	public void setPhy100Group(String phy100Group) {
+		this.phy100Group = phy100Group;
+	}
+	public String getPhy100Survival() {
+		return phy100Survival;
+	}
+	public void setPhy100Survival(String phy100Survival) {
+		this.phy100Survival = phy100Survival;
+	}
 	@Override
 	public String toString() {
-		return "Phy100 [phy100Id=" + phy100Id + ", phy100PName=" + phy100Name + ", phy100Impo=" + phy100Impo
-				+ ", phy100Height=" + phy100Height + ", phy100Weight=" + phy100Weight + ", phy100Power=" + phy100Power + ", phy100Grade=" + phy100Grade + "] ";
+		return "Phy100 [phy100Id=" + phy100Id + ", phy100Name=" + phy100Name + ", phy100Impo=" + phy100Impo
+				+ ", phy100Height=" + phy100Height + ", phy100Weight=" + phy100Weight + ", phy100Power=" + phy100Power + ", phy100Group=" + phy100Group + ", phy100Survival=" + phy100Survival + "rank = "+ rank+"]";
 	
 }
 }

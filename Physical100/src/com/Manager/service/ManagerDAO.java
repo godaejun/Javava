@@ -14,6 +14,30 @@ public class ManagerDAO extends DAO {
 		return mDao;
 	}
 
+	//0.회원가입 기능
+			public int signup(Manager manager) {
+				int result = 0;
+				try {
+					conn();
+					String sql = "INSERT INTO manager VALUES(?,?,?,?,?,?)";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1,manager.getManagerId());
+					pstmt.setString(2,manager.getManagerPw());
+					pstmt.setString(3,manager.getManagerName());
+					pstmt.setInt(4,manager.getManagerTell());
+					
+					result = pstmt.executeUpdate();
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}finally {
+					disconn();
+				}
+					
+				return result;
+			}
+	
+	
 	// 1.로그인 기능
 	public Manager login(String id) {
 		Manager man = null;
